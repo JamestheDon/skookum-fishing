@@ -1,17 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Booking from './components/Booking'
+
+function Home() {
+  return (
+    <div className="home-page">
+      <div className="hero-background">
+        <div className="hero-content">
+          <h1 className="hero-title">Welcome to Skookum Fishing</h1>
+          <p className="hero-text">Discover the best fishing spots and track your catches in the Pacific Northwest</p>
+        </div>
+      </div>
+      
+      <div className="container">
+        <div className="grid">
+          <div className="card">
+            <h2>Guided Tours</h2>
+            <p>Experience the best fishing spots with our expert guides</p>
+          </div>
+          
+          <div className="card">
+            <h2>Weather Forecast</h2>
+            <p>Loading weather data...</p>
+          </div>
+          
+          <div className="card">
+            <h2>Nearby Spots</h2>
+            <p>Discover fishing spots near you</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-3xl font-bold text-gray-900">
-        Hello Tailwind!
-      </h1>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booking" element={<Booking />} />
+          {/* Add more routes as needed */}
+        </Routes>
+      </Layout>
+    </Router>
   )
 }
 
