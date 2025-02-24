@@ -78,6 +78,10 @@ yarn build
 
 The build artifacts will be stored in the `dist/` directory.
 
+## Deployment
+
+For instructions on deploying to Netlify, including how to set up environment variables for EmailJS, see the [Netlify Deployment Guide](NETLIFY_DEPLOYMENT.md).
+
 ## Email Functionality
 
 The booking form includes email notification functionality using EmailJS:

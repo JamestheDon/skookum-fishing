@@ -70,38 +70,34 @@ This guide will help you set up EmailJS to send email notifications when a custo
      ```
 3. Save the template and note the Template ID as your Confirmation Template ID
 
-## Step 4: Update the Code
+## Step 4: Set Up Environment Variables
 
-1. Open `src/emailjs-config.js` and update with your User ID:
-   ```javascript
-   import { init } from '@emailjs/browser';
+### For Local Development
 
-   export const initEmailJS = () => {
-     init("YOUR_USER_ID"); // Replace with your EmailJS User ID
-   };
+1. Create a `.env.local` file in the root of your project with the following variables:
+   ```
+   VITE_EMAILJS_USER_ID=your_user_id_here
+   VITE_EMAILJS_SERVICE_ID=your_service_id_here
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
+   VITE_EMAILJS_NOTIFICATION_TEMPLATE_ID=your_notification_template_id_here
+   VITE_EMAILJS_CONFIRMATION_TEMPLATE_ID=your_confirmation_template_id_here
    ```
 
-2. Open `src/components/Booking.jsx` and update the EmailJS parameters:
-   ```javascript
-   // Replace these values with your actual EmailJS credentials
-   emailjs.send(
-     'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-     'YOUR_TEMPLATE_ID', // Replace with your notification template ID
-     templateParams,
-     'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-   )
-   .then((result) => {
-     console.log('Notification email sent successfully:', result.text);
-     
-     // Send confirmation email to the customer
-     return emailjs.send(
-       'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-       'YOUR_CONFIRMATION_TEMPLATE_ID', // Replace with your confirmation template ID
-       templateParams,
-       'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-     );
-   })
-   ```
+2. Replace the placeholder values with your actual EmailJS credentials.
+
+### For Netlify Deployment
+
+1. Log in to your Netlify dashboard
+2. Go to your site settings
+3. Navigate to "Build & deploy" > "Environment variables"
+4. Add the following environment variables:
+   - `VITE_EMAILJS_USER_ID`: Your EmailJS User ID
+   - `VITE_EMAILJS_SERVICE_ID`: Your EmailJS Service ID
+   - `VITE_EMAILJS_PUBLIC_KEY`: Your EmailJS Public Key
+   - `VITE_EMAILJS_NOTIFICATION_TEMPLATE_ID`: Your notification template ID
+   - `VITE_EMAILJS_CONFIRMATION_TEMPLATE_ID`: Your confirmation template ID
+5. Save the changes
+6. Redeploy your site for the changes to take effect
 
 ## Step 5: Test the Form
 

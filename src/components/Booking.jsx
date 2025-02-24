@@ -68,20 +68,20 @@ function Booking() {
     
     // Send the email using EmailJS
     emailjs.send(
-      'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-      'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID (notification to business)
+      import.meta.env.VITE_EMAILJS_SERVICE_ID, // Service ID from environment variables
+      import.meta.env.VITE_EMAILJS_NOTIFICATION_TEMPLATE_ID, // Notification template ID from environment variables
       templateParams,
-      'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Public key from environment variables
     )
     .then((result) => {
       console.log('Notification email sent successfully:', result.text);
       
       // Send confirmation email to the customer
       return emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_CONFIRMATION_TEMPLATE_ID', // Replace with your confirmation template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Service ID from environment variables
+        import.meta.env.VITE_EMAILJS_CONFIRMATION_TEMPLATE_ID, // Confirmation template ID from environment variables
         templateParams,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Public key from environment variables
       );
     })
     .then((result) => {
