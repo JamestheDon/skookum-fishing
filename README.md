@@ -6,9 +6,10 @@ A modern web application for discovering fishing spots and booking guided tours 
 
 - Responsive design for all device sizes
 - Interactive fishing spot discovery
-- Tour booking system
+- Tour booking system with email notifications
 - Weather information for fishing locations
 - Beautiful UI with optimized images
+- Parallax scrolling effect with fixed background images
 
 ## Getting Started
 
@@ -77,6 +78,22 @@ yarn build
 
 The build artifacts will be stored in the `dist/` directory.
 
+## Email Functionality
+
+The booking form includes email notification functionality using EmailJS:
+
+- When a customer submits a booking request, two emails are sent:
+  1. A notification email to the business owner with all booking details
+  2. A confirmation email to the customer acknowledging their request
+
+### Setting Up Email Functionality
+
+1. Create an account on [EmailJS](https://www.emailjs.com/)
+2. Follow the detailed setup instructions in the `EMAIL_SETUP.md` file
+3. Update the configuration in:
+   - `src/emailjs-config.js`: Add your User ID
+   - `src/components/Booking.jsx`: Add your Service ID, Template IDs, and Public Key
+
 ## Technologies Used
 
 - React
@@ -84,6 +101,7 @@ The build artifacts will be stored in the `dist/` directory.
 - Vite
 - Sharp (image processing)
 - HEIC-Convert (for iOS image format support)
+- EmailJS (for email notifications)
 
 ## License
 

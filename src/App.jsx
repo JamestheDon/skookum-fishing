@@ -1,23 +1,28 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import Layout from './components/Layout'
 import Booking from './components/Booking'
+import Spots from './components/Spots'
 import OptimizedImage from './components/OptimizedImage'
+import { initEmailJS } from './emailjs-config'
 
 function Home() {
   return (
     <div className="home-page">
-      <div className="hero-background home-hero"></div>
-      <div className="hero-content">
-        <h1 className="hero-title">Welcome to Skookum Fishing</h1>
-        <p className="hero-text">Discover the best fishing spots and track your catches in the Pacific Northwest</p>
-        <div className="hero-buttons">
-          <Link to="/booking" className="cta-button primary">Book a Tour</Link>
-          <Link to="/spots" className="cta-button secondary">Explore Spots</Link>
+      <section className="hero-section">
+        <div className="hero-background home-hero"></div>
+        <div className="hero-content">
+          <h1 className="hero-title">Welcome to Skookum Fishing</h1>
+          <p className="hero-text">Discover the best fishing spots and track your catches in the Pacific Northwest</p>
+          <div className="hero-buttons">
+            <Link to="/booking" className="btn btn-primary">Book a Tour</Link>
+            <Link to="/spots" className="btn btn-outline">Explore Spots</Link>
+          </div>
         </div>
-      </div>
+      </section>
       
-      <div className="container home-content">
+      <div className="container home-content content-over-bg">
         <h2 className="section-title">Our Services</h2>
         <div className="grid">
           <div className="feature-card">
@@ -25,40 +30,77 @@ function Home() {
               <OptimizedImage src="/src/assets/optimized/IMG_9743-preview.HEIC.webp" alt="Guided fishing tour" />
             </div>
             <div className="card-content">
-              <h2>Guided Tours</h2>
-              <p>Experience the best fishing spots with our expert guides who know all the local secrets</p>
-              <Link to="/booking" className="card-button">Book Now</Link>
+              <h2>River Tours</h2>
+              <p>Experience year-round fishing on the Yakima River targeting rainbow and cutthroat trout with multiple tactics. All catch and release with selective gear rules.</p>
+              <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
           </div>
           
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src="/src/assets/optimized/IMG_9059-preview.HEIC.webp" alt="Weather forecast" />
+              <OptimizedImage src="/src/assets/optimized/IMG_9059-preview.HEIC.webp" alt="Lake fishing" />
             </div>
             <div className="card-content">
-              <h2>Weather Forecast</h2>
-              <p>Get real-time weather updates and fishing conditions for your favorite spots</p>
-              <button className="card-button">Check Weather</button>
+              <h2>Lake Tours</h2>
+              <p>From alpine lakes to roadside gravel ponds and reservoirs, our lake tours offer a wide range of trout and salmon species throughout the year, often with the ability to retain fish.</p>
+              <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
           </div>
           
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src="/src/assets/optimized/IMG_9780-preview.HEIC.webp" alt="Nearby fishing spots" />
+              <OptimizedImage src="/src/assets/optimized/IMG_9921.webp" alt="Seasonal fishing" />
             </div>
             <div className="card-content">
-              <h2>Nearby Spots</h2>
-              <p>Discover top-rated fishing locations near you with our interactive map</p>
-              <Link to="/spots" className="card-button">Find Spots</Link>
+              <h2>Seasonal Specials</h2>
+              <p>Target mountain whitefish on the Yakima River (Jan-Feb) with the ability to retain state limits, or join our specialty tours at Lake Cle-Elum, Cooper Lake, and Lake Wenatchee.</p>
+              <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
           </div>
         </div>
         
-        <div className="gallery-section">
+        <div className="tour-details-section content-over-bg">
+          <h2 className="section-title">Tour Details</h2>
+          <div className="tour-details-container">
+            <div className="tour-details-card">
+              <div className="tour-details-header">
+                <h3>River Fishing</h3>
+              </div>
+              <div className="tour-details-content">
+                <ul>
+                  <li><strong>Location:</strong> Yakima River</li>
+                  <li><strong>Target Species:</strong> Rainbow trout, cutthroat trout, mountain whitefish</li>
+                  <li><strong>Season:</strong> Year-round</li>
+                  <li><strong>Regulations:</strong> Catch and release, selective gear rules</li>
+                  <li><strong>Special Season:</strong> Mountain whitefish retention allowed January-February</li>
+                  <li><strong>Tactics:</strong> Fly fishing, drift fishing, and other specialized techniques</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="tour-details-card">
+              <div className="tour-details-header">
+                <h3>Lake Fishing</h3>
+              </div>
+              <div className="tour-details-content">
+                <ul>
+                  <li><strong>Locations:</strong> Lavender Lake, Lake Cle-Elum, Cooper Lake, Lake Wenatchee</li>
+                  <li><strong>Target Species:</strong> Various trout and salmon species</li>
+                  <li><strong>Season:</strong> Varies by location and species</li>
+                  <li><strong>Regulations:</strong> Many allow fish retention for table fare</li>
+                  <li><strong>Environments:</strong> Alpine lakes, roadside gravel ponds, reservoirs</li>
+                  <li><strong>Tactics:</strong> Wide range of techniques including trolling, casting, and still fishing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="gallery-section content-over-bg">
           <h2 className="section-title">Fishing Adventures</h2>
           <div className="gallery-grid">
             <div className="gallery-item">
-              <OptimizedImage src="/src/assets/optimized/IMG_5209.webp" alt="Trout fishing" />
+              <OptimizedImage src="/src/assets/optimized/IMG_6615-preview.HEIC.webp" alt="Trout fishing" />
             </div>
             <div className="gallery-item">
               <OptimizedImage src="/src/assets/optimized/IMG_9825-preview.HEIC.webp" alt="Fishing in the river" />
@@ -78,7 +120,7 @@ function Home() {
           </div>
         </div>
         
-        <div className="testimonial-section">
+        <div className="testimonial-section content-over-bg">
           <h2 className="section-title">What Our Customers Say</h2>
           <div className="testimonial">
             <div className="testimonial-content">
@@ -96,12 +138,18 @@ function Home() {
 }
 
 function App() {
+  useEffect(() => {
+    // Initialize EmailJS when the app starts
+    initEmailJS();
+  }, []);
+
   return (
     <Router>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/spots" element={<Spots />} />
           {/* Add more routes as needed */}
         </Routes>
       </Layout>

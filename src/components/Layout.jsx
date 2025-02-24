@@ -1,19 +1,26 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import logo from '../assets/logo.svg'
 
 function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const location = useLocation()
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
   }
 
+  const isActive = (path) => {
+    return location.pathname === path ? 'active' : ''
+  }
+
   return (
     <div className="layout">
-      <nav className="nav">
-        <div className="container nav-content">
-          <Link to="/" className="nav-brand-link">
-            <h1 className="nav-brand">Skookum Fishing</h1>
+      <nav className="navbar">
+        <div className="container">
+          <Link to="/" className="nav-logo">
+            <img src={logo} alt="Skookum Fishing Logo" width="40" height="40" />
+            <span>Skookum Fishing</span>
           </Link>
           
           <div className="mobile-menu-button" onClick={toggleMobileMenu}>
@@ -23,9 +30,9 @@ function Layout({ children }) {
           </div>
           
           <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <Link to="/spots" onClick={() => setMobileMenuOpen(false)}>Fishing Spots</Link>
-            <Link to="/booking" onClick={() => setMobileMenuOpen(false)}>Book a Tour</Link>
+            <Link to="/" className={`nav-link ${isActive('/')}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+            <Link to="/spots" className={`nav-link ${isActive('/spots')}`} onClick={() => setMobileMenuOpen(false)}>Fishing Spots</Link>
+            <Link to="/booking" className={`nav-link ${isActive('/booking')}`} onClick={() => setMobileMenuOpen(false)}>Book a Tour</Link>
           </div>
         </div>
       </nav>
