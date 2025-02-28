@@ -6,15 +6,15 @@ import Booking from './components/Booking'
 import Spots from './components/Spots'
 import OptimizedImage from './components/OptimizedImage'
 import { initEmailJS } from './emailjs-config'
-import IMG_9743 from './assets/optimized/IMG_9743-preview.HEIC.webp';
-import IMG_9059 from './assets/optimized/IMG_9059-preview.HEIC.webp';
-import IMG_9921 from './assets/optimized/IMG_9921.webp';
-import IMG_6615 from './assets/optimized/IMG_6615-preview.HEIC.webp';
-import IMG_9825 from './assets/optimized/IMG_9825-preview.HEIC.webp';
-import IMG_5261 from './assets/optimized/IMG_5261.webp';
-import IMG_8367 from './assets/optimized/IMG_8367.webp';
-import IMG_9725 from './assets/optimized/IMG_9725-preview.HEIC.webp';
-import IMG_0022 from './assets/optimized/IMG_0022.webp';
+import IMG_9743 from '/assets/optimized/IMG_9743-preview.HEIC.webp';
+import IMG_9059 from '/assets/optimized/IMG_9059-preview.HEIC.webp';
+import IMG_9921 from '/assets/optimized/IMG_9921.webp';
+import IMG_6615 from '/assets/optimized/IMG_6615-preview.HEIC.webp';
+import IMG_9825 from '/assets/optimized/IMG_9825-preview.HEIC.webp';
+import IMG_5261 from '/assets/optimized/IMG_5261.webp';
+import IMG_8367 from '/assets/optimized/IMG_8367.webp';
+import IMG_9725 from '/assets/optimized/IMG_9725-preview.HEIC.webp';
+import IMG_0022 from '/assets/optimized/IMG_0022.webp';
 
 function Home() {
   return (
@@ -25,7 +25,7 @@ function Home() {
           <h1 className="hero-title">Welcome to Skookum Fishing</h1>
           <p className="hero-text">Discover the best fishing spots and track your catches in the Pacific Northwest</p>
           <div className="hero-buttons">
-            <Link to="/booking" className="btn btn-primary">Book a Tour</Link>
+            <Link to="/booking" className="btn btn-primary">Book a Guide</Link>
             <Link to="/spots" className="btn btn-outline">Explore Spots</Link>
           </div>
         </div>
@@ -36,10 +36,10 @@ function Home() {
         <div className="grid">
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src={IMG_9743} alt="Guided fishing tour" />
+              <OptimizedImage src={IMG_9743} alt="Guided fishing trip" />
             </div>
             <div className="card-content">
-              <h2>River Tours</h2>
+              <h2>River Guides</h2>
               <p>Experience year-round fishing on the Yakima River targeting rainbow and cutthroat trout with multiple tactics. All catch and release with selective gear rules.</p>
               <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
@@ -50,8 +50,8 @@ function Home() {
               <OptimizedImage src={IMG_9059} alt="Lake fishing" />
             </div>
             <div className="card-content">
-              <h2>Lake Tours</h2>
-              <p>From alpine lakes to roadside gravel ponds and reservoirs, our lake tours offer a wide range of trout and salmon species throughout the year, often with the ability to retain fish.</p>
+              <h2>Lake Guides</h2>
+              <p>From alpine lakes to roadside gravel ponds and reservoirs, our guided lake trips offer a wide range of trout and salmon species throughout the year, often with the ability to retain fish.</p>
               <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
           </div>
@@ -62,20 +62,20 @@ function Home() {
             </div>
             <div className="card-content">
               <h2>Seasonal Specials</h2>
-              <p>Target mountain whitefish on the Yakima River (Jan-Feb) with the ability to retain state limits, or join our specialty tours at Lake Cle-Elum, Cooper Lake, and Lake Wenatchee.</p>
+              <p>Target mountain whitefish on the Yakima River (Jan-Feb) with the ability to retain state limits, or join our specialty guided trips at Lake Cle-Elum, Cooper Lake, and Lake Wenatchee.</p>
               <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
           </div>
         </div>
         
-        <div className="tour-details-section content-over-bg">
-          <h2 className="section-title">Tour Details</h2>
-          <div className="tour-details-container">
-            <div className="tour-details-card">
-              <div className="tour-details-header">
+        <div className="guide-details-section content-over-bg">
+          <h2 className="section-title">Guide Details</h2>
+          <div className="guide-details-container">
+            <div className="guide-details-card">
+              <div className="guide-details-header">
                 <h3>River Fishing</h3>
               </div>
-              <div className="tour-details-content">
+              <div className="guide-details-content">
                 <ul>
                   <li><strong>Location:</strong> Yakima River</li>
                   <li><strong>Target Species:</strong> Rainbow trout, cutthroat trout, mountain whitefish</li>
@@ -87,11 +87,11 @@ function Home() {
               </div>
             </div>
             
-            <div className="tour-details-card">
-              <div className="tour-details-header">
+            <div className="guide-details-card">
+              <div className="guide-details-header">
                 <h3>Lake Fishing</h3>
               </div>
-              <div className="tour-details-content">
+              <div className="guide-details-content">
                 <ul>
                   <li><strong>Locations:</strong> Lavender Lake, Lake Cle-Elum, Cooper Lake, Lake Wenatchee</li>
                   <li><strong>Target Species:</strong> Various trout and salmon species</li>

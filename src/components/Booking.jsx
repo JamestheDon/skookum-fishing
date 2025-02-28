@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import OptimizedImage from './OptimizedImage'
-import IMG_9709 from '../assets/optimized/IMG_9709-preview.HEIC.webp';
-import IMG_7322 from '../assets/optimized/IMG_7322-preview.HEIC.webp';
-import IMG_3924 from '../assets/optimized/IMG_3924-preview.HEIC.webp';
-import IMG_9965 from '../assets/optimized/IMG_9965.webp';
+import IMG_9709 from '/assets/optimized/IMG_9709-preview.HEIC.webp';
+import IMG_7322 from '/assets/optimized/IMG_7322-preview.HEIC.webp';
+import IMG_3924 from '/assets/optimized/IMG_3924-preview.HEIC.webp';
+import IMG_9965 from '/assets/optimized/IMG_9965.webp';
 
 function Booking() {
   const form = useRef();
@@ -13,7 +13,7 @@ function Booking() {
     email: '',
     phone: '',
     date: '',
-    tourType: 'river',
+    guideType: 'river',
     groupSize: '1',
     experience: 'beginner',
     preferences: ''
@@ -36,8 +36,8 @@ function Booking() {
     setIsSubmitting(true)
     setSubmitError(null)
     
-    // Get the tour type text for the email
-    const tourTypeText = {
+    // Get the guide type text for the email
+    const guideTypeText = {
       'river': 'Yakima River Trout',
       'whitefish': 'Yakima River Whitefish (Jan-Feb)',
       'alpine': 'Alpine Lakes',
@@ -45,7 +45,7 @@ function Booking() {
       'cleelum': 'Lake Cle-Elum',
       'cooper': 'Cooper Lake',
       'wenatchee': 'Lake Wenatchee'
-    }[formData.tourType];
+    }[formData.guideType];
     
     // Get the experience level text
     const experienceText = {
@@ -63,7 +63,7 @@ function Booking() {
       from_email: formData.email,
       phone: formData.phone,
       date: formData.date,
-      tour_type: tourTypeText,
+      guide_type: guideTypeText,
       group_size: groupSizeText,
       experience: experienceText,
       preferences: formData.preferences,
@@ -102,7 +102,7 @@ function Booking() {
           email: '',
           phone: '',
           date: '',
-          tourType: 'river',
+          guideType: 'river',
           groupSize: '1',
           experience: 'beginner',
           preferences: ''
@@ -121,7 +121,7 @@ function Booking() {
       <section className="hero-section">
         <div className="hero-background booking-hero"></div>
         <div className="hero-content">
-          <h1 className="hero-title">Book a Guided Fishing Tour</h1>
+          <h1 className="hero-title">Book a Guided Fishing Trip</h1>
           <p className="hero-text">Experience the best fishing spots with our expert guides</p>
         </div>
       </section>
@@ -214,13 +214,13 @@ function Booking() {
 
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="tourType">
-                      <span className="form-icon">🎣</span> Tour Type
+                    <label htmlFor="guideType">
+                      <span className="form-icon">🎣</span> Guide Type
                     </label>
                     <select
-                      id="tourType"
-                      name="tourType"
-                      value={formData.tourType}
+                      id="guideType"
+                      name="guideType"
+                      value={formData.guideType}
                       onChange={handleChange}
                       className="form-input"
                     >
@@ -306,17 +306,17 @@ function Booking() {
           </div>
 
           <div className="booking-info">
-            <h2>Tour Information</h2>
+            <h2>Guide Information</h2>
             
             <div className="info-card">
               <div className="info-card-header">
                 <span className="info-icon">🎯</span>
-                <h3>Tour Options</h3>
+                <h3>Guide Options</h3>
               </div>
               <ul>
-                <li><strong>River Tours:</strong> Yakima River fishing for rainbow and cutthroat trout (year-round, catch and release)</li>
+                <li><strong>River Guides:</strong> Yakima River fishing for rainbow and cutthroat trout (year-round, catch and release)</li>
                 <li><strong>Seasonal Whitefish:</strong> Target mountain whitefish with retention allowed (Jan-Feb)</li>
-                <li><strong>Lake Tours:</strong> Various locations from alpine lakes to reservoirs with different species available</li>
+                <li><strong>Lake Guides:</strong> Various locations from alpine lakes to reservoirs with different species available</li>
               </ul>
             </div>
             
@@ -341,7 +341,7 @@ function Booking() {
                 <h3>Important Notes</h3>
               </div>
               <ul>
-                <li>Tours are available year-round with seasonal specialties</li>
+                <li>Guided trips are available year-round with seasonal specialties</li>
                 <li>Suitable for all skill levels</li>
                 <li>48-hour cancellation policy</li>
                 <li>Weather-dependent scheduling</li>

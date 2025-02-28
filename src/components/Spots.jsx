@@ -2,15 +2,18 @@ import { Link } from 'react-router-dom'
 import OptimizedImage from './OptimizedImage'
 
 // Import all images used in the component
-import IMG_9743 from '../assets/optimized/IMG_9743-preview.HEIC.webp';
-import IMG_9780 from '../assets/optimized/IMG_9780-preview.HEIC.webp';
-import IMG_9921 from '../assets/optimized/IMG_9921.webp';
-import IMG_9279 from '../assets/optimized/IMG_9279-preview.HEIC.webp';
-import IMG_9180 from '../assets/optimized/IMG_9180-preview.HEIC.webp';
-import IMG_0910 from '../assets/optimized/IMG_0910.HEIC.webp';
-import IMG_5209 from '../assets/optimized/IMG_5209.webp';
-import IMG_9238 from '../assets/optimized/IMG_9238-preview.webp';
-import IMG_9302 from '../assets/optimized/IMG_9302-preview.webp';
+import IMG_9743 from '/assets/optimized/IMG_9743-preview.HEIC.webp';
+import IMG_9780 from '/assets/optimized/IMG_9780-preview.HEIC.webp';
+import IMG_9921 from '/assets/optimized/IMG_9921.webp';
+import IMG_9279 from '/assets/optimized/IMG_9279-preview.HEIC.webp';
+import IMG_9180 from '/assets/optimized/IMG_9180-preview.HEIC.webp';
+import IMG_0910 from '/assets/optimized/IMG_0910.HEIC.webp';
+import IMG_5209 from '/assets/optimized/IMG_5209.webp';
+import IMG_9238 from '/assets/optimized/IMG_9238-preview.webp';
+import IMG_9302 from '/assets/optimized/IMG_9302-preview.webp';
+import IMG_9965 from '/assets/optimized/IMG_9965.webp';
+import IMG_3924 from '/assets/optimized/IMG_3924-preview.HEIC.webp';
+import IMG_7322 from '/assets/optimized/IMG_7322-preview.HEIC.webp';
 
 function Spots() {
   const riverSpots = [
@@ -266,8 +269,8 @@ function Spots() {
           <section className="cta-section">
             <div className="cta-container">
               <h2>Ready to Experience These Fishing Spots?</h2>
-              <p>Book a guided tour with our experienced fishing guides and discover the best fishing spots in the Pacific Northwest.</p>
-              <Link to="/booking" className="btn btn-primary">Book a Tour</Link>
+              <p>Book a guided fishing trip with our experienced fishing guides and discover the best fishing spots in the Pacific Northwest.</p>
+              <Link to="/booking" className="btn btn-primary">Book a Guide</Link>
             </div>
           </section>
         </div>

@@ -62,8 +62,8 @@ function Layout({ children }) {
               </div>
               <div className="footer-section">
                 <h3>Contact</h3>
-                <p>Email: info@skookumfishing.com</p>
-                <p>Phone: (555) 123-4567</p>
+                <p>Email: skookum-fishing@gmail.com</p>
+                <p>Phone: (509) 260-0327</p>
               </div>
             </div>
           </div>
