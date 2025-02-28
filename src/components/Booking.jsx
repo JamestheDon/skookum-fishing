@@ -1,6 +1,10 @@
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import OptimizedImage from './OptimizedImage'
+import IMG_9709 from '../assets/optimized/IMG_9709-preview.HEIC.webp';
+import IMG_7322 from '../assets/optimized/IMG_7322-preview.HEIC.webp';
+import IMG_3924 from '../assets/optimized/IMG_3924-preview.HEIC.webp';
+import IMG_9965 from '../assets/optimized/IMG_9965.webp';
 
 function Booking() {
   const form = useRef();
@@ -352,10 +356,10 @@ function Booking() {
                 <h3>Gallery</h3>
               </div>
               <div className="info-gallery">
-                <OptimizedImage src="/src/assets/optimized/IMG_9709-preview.HEIC.webp" alt="Trout fishing" />
-                <OptimizedImage src="/src/assets/optimized/IMG_7322-preview.HEIC.webp" alt="Fishing adventure" />
-                <OptimizedImage src="/src/assets/optimized/IMG_3924-preview.HEIC.webp" alt="Fishing spot" />
-                <OptimizedImage src="/src/assets/optimized/IMG_9965.webp" alt="Caught fish" />
+                <OptimizedImage src={IMG_9709} alt="Trout fishing" />
+                <OptimizedImage src={IMG_7322} alt="Fishing adventure" />
+                <OptimizedImage src={IMG_3924} alt="Fishing spot" />
+                <OptimizedImage src={IMG_9965} alt="Caught fish" />
               </div>
             </div>
           </div>

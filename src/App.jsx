@@ -6,6 +6,15 @@ import Booking from './components/Booking'
 import Spots from './components/Spots'
 import OptimizedImage from './components/OptimizedImage'
 import { initEmailJS } from './emailjs-config'
+import IMG_9743 from './assets/optimized/IMG_9743-preview.HEIC.webp';
+import IMG_9059 from './assets/optimized/IMG_9059-preview.HEIC.webp';
+import IMG_9921 from './assets/optimized/IMG_9921.webp';
+import IMG_6615 from './assets/optimized/IMG_6615-preview.HEIC.webp';
+import IMG_9825 from './assets/optimized/IMG_9825-preview.HEIC.webp';
+import IMG_5261 from './assets/optimized/IMG_5261.webp';
+import IMG_8367 from './assets/optimized/IMG_8367.webp';
+import IMG_9725 from './assets/optimized/IMG_9725-preview.HEIC.webp';
+import IMG_0022 from './assets/optimized/IMG_0022.webp';
 
 function Home() {
   return (
@@ -27,7 +36,7 @@ function Home() {
         <div className="grid">
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src="/src/assets/optimized/IMG_9743-preview.HEIC.webp" alt="Guided fishing tour" />
+              <OptimizedImage src={IMG_9743} alt="Guided fishing tour" />
             </div>
             <div className="card-content">
               <h2>River Tours</h2>
@@ -38,7 +47,7 @@ function Home() {
           
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src="/src/assets/optimized/IMG_9059-preview.HEIC.webp" alt="Lake fishing" />
+              <OptimizedImage src={IMG_9059} alt="Lake fishing" />
             </div>
             <div className="card-content">
               <h2>Lake Tours</h2>
@@ -49,7 +58,7 @@ function Home() {
           
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src="/src/assets/optimized/IMG_9921.webp" alt="Seasonal fishing" />
+              <OptimizedImage src={IMG_9921} alt="Seasonal fishing" />
             </div>
             <div className="card-content">
               <h2>Seasonal Specials</h2>
@@ -100,22 +109,22 @@ function Home() {
           <h2 className="section-title">Fishing Adventures</h2>
           <div className="gallery-grid">
             <div className="gallery-item">
-              <OptimizedImage src="/src/assets/optimized/IMG_6615-preview.HEIC.webp" alt="Trout fishing" />
+              <OptimizedImage src={IMG_6615} alt="Trout fishing" />
             </div>
             <div className="gallery-item">
-              <OptimizedImage src="/src/assets/optimized/IMG_9825-preview.HEIC.webp" alt="Fishing in the river" />
+              <OptimizedImage src={IMG_9825} alt="Fishing in the river" />
             </div>
             <div className="gallery-item">
-              <OptimizedImage src="/src/assets/optimized/IMG_5261.webp" alt="Caught fish" />
+              <OptimizedImage src={IMG_5261} alt="Caught fish" />
             </div>
             <div className="gallery-item">
-              <OptimizedImage src="/src/assets/optimized/IMG_8367.webp" alt="Fishing spot" />
+              <OptimizedImage src={IMG_8367} alt="Fishing spot" />
             </div>
             <div className="gallery-item">
-              <OptimizedImage src="/src/assets/optimized/IMG_9725-preview.HEIC.webp" alt="Fishing adventure" />
+              <OptimizedImage src={IMG_9725} alt="Fishing adventure" />
             </div>
             <div className="gallery-item">
-              <OptimizedImage src="/src/assets/optimized/IMG_0022.webp" alt="Beautiful scenery" />
+              <OptimizedImage src={IMG_0022} alt="Beautiful scenery" />
             </div>
           </div>
         </div>

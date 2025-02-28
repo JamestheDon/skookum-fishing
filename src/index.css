@@ -207,7 +207,7 @@ body {
 }
 
 .home-hero::before {
-  background-image: url('/src/assets/optimized/IMG_0733.webp');
+  background-image: url('/assets/optimized/IMG_0733.webp');
   background-position: center 40%;
 }
 
@@ -221,13 +221,13 @@ body {
 }
 
 .spots-hero::before {
-  background-image: url('/src/assets/optimized/IMG_5261.webp');
+  background-image: url('/assets/optimized/IMG_5261.webp');
   background-position: center center;
   filter: brightness(0.6);
 }
 
 .booking-hero::before {
-  background-image: url('/src/assets/optimized/IMG_9302-preview 2.HEIC.webp');
+  background-image: url('/assets/optimized/IMG_9302-preview 2.HEIC.webp');
 }
 
 .hero-content {
@@ -1138,7 +1138,7 @@ html {
 }
 
 .spots-hero::before {
-  background-image: url('/src/assets/optimized/IMG_5261.webp');
+  background-image: url('/assets/optimized/IMG_5261.webp');
   background-position: center 30%;
   filter: brightness(0.6);
 }
