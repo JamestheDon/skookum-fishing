@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../assets/logo.svg'
 
 function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -19,8 +18,16 @@ function Layout({ children }) {
       <nav className="navbar">
         <div className="container">
           <Link to="/" className="nav-logo">
-            <img src={logo} alt="Skookum Fishing Logo" width="40" height="40" />
-            <span>Skookum Fishing</span>
+            <img 
+              src="/logo-fish.webp" 
+              alt="Skookum Fishing Logo" 
+              className="navbar-logo" 
+              onError={(e) => {
+                console.error('Error loading logo image');
+                e.target.style.display = 'none';
+              }}
+            />
+            <span className="company-name">Skookum Fishing</span>
           </Link>
           
           <div className="mobile-menu-button" onClick={toggleMobileMenu}>

@@ -20,8 +20,11 @@ If you don't already have one, sign up for a free account at [Netlify](https://w
 
 Enter the following build settings:
 
+- **Base directory**: Leave this blank (Netlify will use the root of your repository by default)
 - **Build command**: `npm run build`
 - **Publish directory**: `dist`
+
+Note: The base directory is where Netlify will install dependencies and run your build command. By default, this is the root of your repository where your `package.json` file is located.
 
 ### 4. Set Up Environment Variables for EmailJS
 

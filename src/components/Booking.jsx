@@ -63,9 +63,10 @@ function Booking() {
       group_size: groupSizeText,
       experience: experienceText,
       preferences: formData.preferences,
+      has_preferences: formData.preferences.trim().length > 0,
       reply_to: formData.email
     };
-    
+    console.log(import.meta.env.VITE_EMAILJS_NOTIFICATION_TEMPLATE_ID)
     // Send the email using EmailJS
     emailjs.send(
       import.meta.env.VITE_EMAILJS_SERVICE_ID, // Service ID from environment variables
