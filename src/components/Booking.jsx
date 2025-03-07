@@ -329,7 +329,6 @@ function Booking() {
                 <li>Professional fishing guide</li>
                 <li>All necessary equipment</li>
                 <li>Safety gear</li>
-                <li>Fishing license for the day</li>
                 <li>Light refreshments</li>
                 <li>Multiple fishing tactics based on conditions</li>
               </ul>
