@@ -9,9 +9,9 @@ import { initEmailJS } from './emailjs-config'
 import fishOfALifetime from '/assets/optimized/fish-of-a-lifetime.webp';
 import lakeWenatcheeMorning from '/assets/optimized/lake-wenatchee-morning.webp';
 import riverCrossing from '/assets/optimized/river-crossing.webp';
-import IMG_9921 from '/assets/optimized/IMG_9921.webp';
+import crainFlyEye from '/assets/optimized/crain-fly-eye.webp';
+import bloodyBrownTrout from '/assets/optimized/bloody-brown-trout.webp';
 import IMG_6615 from '/assets/optimized/IMG_6615-preview.HEIC.webp';
-import IMG_9825 from '/assets/optimized/IMG_9825-preview.HEIC.webp';
 import IMG_5261 from '/assets/optimized/IMG_5261.webp';
 import IMG_8367 from '/assets/optimized/IMG_8367.webp';
 import IMG_9725 from '/assets/optimized/IMG_9725-preview.HEIC.webp';
@@ -129,7 +129,7 @@ function Home() {
               <OptimizedImage src={IMG_6615} alt="Trout fishing" />
             </div>
             <div className="gallery-item">
-              <OptimizedImage src={IMG_9825} alt="Fishing in the river" />
+              <OptimizedImage src={crainFlyEye} alt="Close up of a crain fly" />
             </div>
             <div className="gallery-item">
               <OptimizedImage src={IMG_5261} alt="Caught fish" />
@@ -138,7 +138,7 @@ function Home() {
               <OptimizedImage src={IMG_8367} alt="Fishing spot" />
             </div>
             <div className="gallery-item">
-              <OptimizedImage src={IMG_9725} alt="Fishing adventure" />
+              <OptimizedImage src={bloodyBrownTrout} alt="Brown trout catch" />
             </div>
             <div className="gallery-item">
               <OptimizedImage src={IMG_0022} alt="Beautiful scenery" />
