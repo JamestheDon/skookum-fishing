@@ -6,8 +6,9 @@ import Booking from './components/Booking'
 import Spots from './components/Spots'
 import OptimizedImage from './components/OptimizedImage'
 import { initEmailJS } from './emailjs-config'
-import IMG_9743 from '/assets/optimized/IMG_9743-preview.HEIC.webp';
-import IMG_9059 from '/assets/optimized/IMG_9059-preview.HEIC.webp';
+import fishOfALifetime from '/assets/optimized/fish-of-a-lifetime.webp';
+import lakeWenatcheeMorning from '/assets/optimized/lake-wenatchee-morning.webp';
+import riverCrossing from '/assets/optimized/river-crossing.webp';
 import IMG_9921 from '/assets/optimized/IMG_9921.webp';
 import IMG_6615 from '/assets/optimized/IMG_6615-preview.HEIC.webp';
 import IMG_9825 from '/assets/optimized/IMG_9825-preview.HEIC.webp';
@@ -22,8 +23,8 @@ function Home() {
       <section className="hero-section">
         <div className="hero-background home-hero"></div>
         <div className="hero-content">
-          <h1 className="hero-title">Welcome to Skookum Fishing</h1>
-          <p className="hero-text">Discover the best fishing spots and track your catches in the Pacific Northwest</p>
+          <h1 className="hero-title">Skookum Fishing LLC</h1>
+          <p className="hero-text">Fishing in the Pacific Northwest</p>
           <div className="hero-buttons">
             <Link to="/booking" className="btn btn-primary">Book a Guide</Link>
             <Link to="/spots" className="btn btn-outline">Explore Spots</Link>
@@ -36,38 +37,54 @@ function Home() {
         <div className="grid">
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src={IMG_9743} alt="Guided fishing trip" />
+              <OptimizedImage src={fishOfALifetime} alt="Guided fishing trip" />
             </div>
             <div className="card-content">
-              <h2>River Guides</h2>
-              <p>Experience year-round fishing on the Yakima River targeting rainbow and cutthroat trout with multiple tactics. All catch and release with selective gear rules.</p>
+              <h2>Yakima River Trips</h2>
+              <p>Fishing the the tiny headwaters to the the mouth.</p>
+              <ul>
+                <li>Rainbow and cutthroat trout</li>
+                <li>Mountain whitefish</li>
+              </ul>
               <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
           </div>
           
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src={IMG_9059} alt="Lake fishing" />
+              <OptimizedImage src={lakeWenatcheeMorning} alt="Lake fishing at Lake Wenatchee" />
             </div>
             <div className="card-content">
-              <h2>Lake Guides</h2>
-              <p>From alpine lakes to roadside gravel ponds and reservoirs, our guided lake trips offer a wide range of trout and salmon species throughout the year, often with the ability to retain fish.</p>
+              <h2>Lakes and Ponds</h2>
+              <p>From alpine lakes to roadside gravel ponds and the reservoirs in between.</p>
+              <ul>
+                <li>Rainbow trout</li>
+                <li>Cutthroat trout</li>
+                <li>Brown trout</li>
+                <li>Brook trout</li>
+                <li>Sockeye salmon</li>
+              </ul>
               <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
           </div>
           
           <div className="feature-card">
             <div className="card-image">
-              <OptimizedImage src={IMG_9921} alt="Seasonal fishing" />
+              <OptimizedImage src={riverCrossing} alt="High country fishing" />
             </div>
             <div className="card-content">
-              <h2>Seasonal Specials</h2>
-              <p>Target mountain whitefish on the Yakima River (Jan-Feb) with the ability to retain state limits, or join our specialty guided trips at Lake Cle-Elum, Cooper Lake, and Lake Wenatchee.</p>
+              <h2>High Country Fishing</h2>
+              <p>Hiking, camping and multi day trips fishing creeks and lakes.</p>
+              <ul>
+                <li>Custom guided fishing packages</li>
+                <li>Hosting</li>
+                <li>You name the adventure.</li>
+              </ul>
               <Link to="/booking" className="btn btn-primary">Book Now</Link>
             </div>
           </div>
         </div>
-        
+        {/*}
         <div className="guide-details-section content-over-bg">
           <h2 className="section-title">Guide Details</h2>
           <div className="guide-details-container">
@@ -104,9 +121,9 @@ function Home() {
             </div>
           </div>
         </div>
-        
+        */}
         <div className="gallery-section content-over-bg">
-          <h2 className="section-title">Fishing Adventures</h2>
+          <h2 className="section-title">Trophy Reel</h2>
           <div className="gallery-grid">
             <div className="gallery-item">
               <OptimizedImage src={IMG_6615} alt="Trout fishing" />

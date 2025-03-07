@@ -3,15 +3,14 @@ import OptimizedImage from './OptimizedImage'
 
 // Import all images used in the component
 import IMG_9743 from '/assets/optimized/IMG_9743-preview.HEIC.webp';
-import IMG_9780 from '/assets/optimized/IMG_9780-preview.HEIC.webp';
 import IMG_9921 from '/assets/optimized/IMG_9921.webp';
 import IMG_9279 from '/assets/optimized/IMG_9279-preview.HEIC.webp';
 import IMG_9180 from '/assets/optimized/IMG_9180-preview.HEIC.webp';
 import IMG_0910 from '/assets/optimized/IMG_0910.HEIC.webp';
 import IMG_5209 from '/assets/optimized/IMG_5209.webp';
 import IMG_9238 from '/assets/optimized/IMG_9238-preview.webp';
-import IMG_9302 from '/assets/optimized/IMG_9302-preview.webp';
-import IMG_9965 from '/assets/optimized/IMG_9965.webp';
+import riverCrossing from '/assets/optimized/river-crossing.webp';
+import lakeWenatcheeMorning from '/assets/optimized/lake-wenatchee-morning.webp';
 import IMG_3924 from '/assets/optimized/IMG_3924-preview.HEIC.webp';
 import IMG_7322 from '/assets/optimized/IMG_7322-preview.HEIC.webp';
 
@@ -34,7 +33,7 @@ function Spots() {
       id: 2,
       name: 'Upper Yakima',
       description: 'The upper section of the Yakima River features faster water, pocket water, and beautiful mountain scenery.',
-      image: IMG_9780,
+      image: IMG_9921,
       details: {
         species: 'Rainbow trout, Cutthroat trout',
         season: 'Year-round (best from late spring through fall)',
@@ -73,7 +72,7 @@ function Spots() {
       id: 2,
       name: 'Lake Cle-Elum',
       description: 'A large reservoir with diverse fishing opportunities for trout and kokanee salmon.',
-      image: IMG_9965,
+      image: lakeWenatcheeMorning,
       details: {
         species: 'Rainbow trout, Kokanee salmon, Cutthroat trout',
         season: 'Year-round (best from spring through fall)',
@@ -158,14 +157,14 @@ function Spots() {
     },
     {
       id: 5,
-      name: 'Ice Fishing Lake',
-      description: 'A high mountain lake that freezes over in winter, offering a unique ice fishing experience.',
-      image: IMG_9302,
+      name: 'High Country Fishing',
+      description: 'Experience pristine alpine fishing in remote mountain streams and lakes, offering a true wilderness adventure.',
+      image: riverCrossing,
       details: {
-        species: 'Rainbow trout, Brook trout',
-        season: 'Winter (when ice conditions permit)',
-        regulations: 'Standard lake regulations apply',
-        tactics: 'Jigging, set lines through the ice'
+        species: 'Rainbow trout, Brook trout, Cutthroat trout',
+        season: 'Summer and early Fall (weather dependent)',
+        regulations: 'Various regulations depending on location',
+        tactics: 'Dry fly fishing, nymphing, small streamers'
       }
     }
   ]
