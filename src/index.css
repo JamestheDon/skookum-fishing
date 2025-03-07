@@ -227,7 +227,9 @@ body {
 }
 
 .booking-hero::before {
-  background-image: url('/assets/optimized/IMG_9302.webp');
+  background-image: url('/assets/optimized/rampart-2.webp');
+  background-position: center 60%;
+  filter: brightness(0.6);
 }
 
 .hero-content {
