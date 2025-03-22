@@ -373,10 +373,10 @@ body {
 .section-title {
   font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .grid {
@@ -439,10 +439,11 @@ body {
   overflow: hidden;
   border-radius: var(--border-radius);
   height: 0;
-  padding-bottom: 100%; /* Create a square aspect ratio */
+  padding-bottom: 75%; /* Change from 100% to 75% to make items shorter vertically */
   box-shadow: var(--shadow);
   transition: var(--transition);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: none; /* Remove border that was creating space */
+  background-color: transparent; /* Make background transparent */
 }
 
 .gallery-item:hover {
@@ -458,21 +459,59 @@ body {
   height: 100%;
   object-fit: cover;
   transition: var(--transition);
+  border-radius: var(--border-radius); /* Add border radius to image itself */
 }
 
+/* Gallery item hover effect */
 .gallery-item:hover img {
   transform: scale(1.05);
 }
 
-/* Override for Brown trout catch image specifically - more specific selector to win specificity */
-.gallery-grid .gallery-item img[alt="Brown trout catch"] {
-  transform: rotate(270deg) scale(1.2) !important;
-  object-fit: cover;
-  object-position: center;
+/* Custom styling for the Brown trout catch image gallery item */
+.gallery-grid .gallery-item[data-image="brown-trout-catch"] {
+  height: 0;
+  padding-bottom: 75%; /* Match the standard aspect ratio */
+  position: relative;
+  display: block;
+  overflow: hidden;
 }
 
-.gallery-grid .gallery-item:hover img[alt="Brown trout catch"] {
-  transform: rotate(270deg) scale(1.3) !important;
+/* Override for Brown trout catch image specifically - more specific selector to win specificity */
+.gallery-grid .gallery-item[data-image="brown-trout-catch"] img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(270deg) scale(1.4) !important; /* Rotated and scaled to fill */
+  object-fit: cover !important;
+  object-position: center;
+  border-radius: var(--border-radius);
+  margin: 0;
+}
+
+.gallery-grid .gallery-item[data-image="brown-trout-catch"]:hover img {
+  transform: rotate(270deg) scale(1.5) !important; /* Slightly larger on hover */
+}
+
+/* Custom styling for the Trout fishing image container in the gallery */
+.home-page .gallery-grid .gallery-item[data-image="trout-fishing"] {
+  padding-bottom: 75%; /* Match the new standard aspect ratio */
+  background-color: transparent;
+  border: none;
+}
+
+/* Override for Trout fishing image to ensure it fills its container */
+.home-page .gallery-grid .gallery-item[data-image="trout-fishing"] img {
+  object-fit: cover !important;
+  object-position: center;
+  transform: none;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+}
+
+.home-page .gallery-grid .gallery-item[data-image="trout-fishing"]:hover img {
+  transform: scale(1.05);
 }
 
 /* Specific positioning for river crossing image */
@@ -1001,17 +1040,29 @@ html {
 
 /* Gallery Section */
 .gallery-section {
-  margin: 4rem 0;
+  margin: 3rem 0;
   width: 100%;
   overflow-x: hidden;
 }
 
+/* Section titles - updated margin */
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem; /* Reduced margin for more compact layout */
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Gallery Grid */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1rem; /* Slightly reduce gap to make layout more compact */
   width: 100%;
   margin: 0 auto;
+  background-color: transparent;
 }
 
 @media (max-width: 1023px) {

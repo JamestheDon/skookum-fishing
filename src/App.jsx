@@ -126,7 +126,7 @@ function Home() {
         <div className="gallery-section content-over-bg">
           <h2 className="section-title">Trophy Reel</h2>
           <div className="gallery-grid">
-            <div className="gallery-item">
+            <div className="gallery-item" data-image="trout-fishing">
               <OptimizedImage src={IMG_6615} alt="Trout fishing" />
             </div>
             <div className="gallery-item">
@@ -138,7 +138,7 @@ function Home() {
             <div className="gallery-item">
               <OptimizedImage src={IMG_8367} alt="Fishing spot" />
             </div>
-            <div className="gallery-item">
+            <div className="gallery-item" data-image="brown-trout-catch">
               <OptimizedImage src={bloodyBrownTrout} alt="Brown trout catch" />
             </div>
             <div className="gallery-item">
