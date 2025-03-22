@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Layout from './components/Layout'
 import Booking from './components/Booking'
 import Spots from './components/Spots'
+import ScrollToTop from './components/ScrollToTop'
 import OptimizedImage from './components/OptimizedImage'
 import { initEmailJS } from './emailjs-config'
 import fishOfALifetime from '/assets/optimized/fish-of-a-lifetime.webp';
@@ -171,6 +172,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
