@@ -17,6 +17,12 @@ import IMG_5261 from '/assets/optimized/IMG_5261.webp';
 import IMG_8367 from '/assets/optimized/IMG_8367.webp';
 import IMG_9725 from '/assets/optimized/IMG_9725-preview.HEIC.webp';
 import IMG_0022 from '/assets/optimized/IMG_0022.webp';
+// E-commerce imports
+import ShopPage from './components/shop/ShopPage'
+import ProductDetail from './components/shop/ProductDetail'
+import CartPage from './components/cart/CartPage'
+import CheckoutPage from './components/checkout/CheckoutPage'
+import { CartProvider } from './context/CartContext'
 
 function Home() {
   return (
@@ -171,17 +177,23 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/spots" element={<Spots />} />
-          {/* Add more routes as needed */}
-        </Routes>
-      </Layout>
-    </Router>
+    <CartProvider>
+      <Router>
+        <ScrollToTop />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/spots" element={<Spots />} />
+            {/* E-commerce routes */}
+            <Route path="/shop" element={<ShopPage />} />
+            <Route path="/shop/product/:productId" element={<ProductDetail />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </CartProvider>
   )
 }
 

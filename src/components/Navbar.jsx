@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 // Import using a different approach
 // import logoImage from '../assets/optimized/bluefish-with-stars.webp'
 
@@ -7,6 +8,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const { totalItems } = useCart()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,11 +69,36 @@ function Navbar() {
             Book a Tour
           </Link>
           <Link 
-            to="/contact" 
-            className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+            to="/shop" 
+            className={`nav-link ${location.pathname.startsWith('/shop') ? 'active' : ''}`}
             onClick={closeMobileMenu}
           >
-            Contact
+            Shop
+          </Link>
+          
+          {/* Cart icon for mobile view */}
+          <div className="mobile-cart-link">
+            <Link 
+              to="/cart" 
+              className={`nav-link cart-link ${location.pathname === '/cart' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              <span className="cart-icon-text">Cart</span>
+              <span className="cart-icon-mobile">🛒</span>
+              {totalItems > 0 && (
+                <span className="cart-count-mobile">{totalItems}</span>
+              )}
+            </Link>
+          </div>
+        </div>
+        
+        {/* Cart icon for desktop view */}
+        <div className="navbar-actions desktop-only">
+          <Link to="/cart" className="cart-icon-container" onClick={closeMobileMenu}>
+            <span className="cart-icon">🛒</span>
+            {totalItems > 0 && (
+              <span className="cart-count">{totalItems}</span>
+            )}
           </Link>
         </div>
         
