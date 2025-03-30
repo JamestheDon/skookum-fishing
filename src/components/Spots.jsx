@@ -13,44 +13,26 @@ import riverCrossing from '/assets/optimized/river-crossing.webp';
 import lakeWenatcheeMorning from '/assets/optimized/lake-wenatchee-morning.webp';
 import IMG_3924 from '/assets/optimized/IMG_3924-preview.HEIC.webp';
 import IMG_7322 from '/assets/optimized/IMG_7322-preview.HEIC.webp';
+import lavenderLake from '/assets/optimized/Lavender-Lake.webp';
+import cooperLake from '/assets/optimized/Cooper-lake.webp';
 
 function Spots() {
   const riverSpots = [
     {
       id: 1,
       name: 'Yakima River',
-      description: 'A premier blue-ribbon trout stream offering year-round fishing opportunities for rainbow and cutthroat trout.',
+      description: 'Washington\'s only Blue Ribbon trout stream offering year-round fishing for rainbow and cutthroat trout. With over 75 miles of fishable water, including fast upper sections with pocket water and mountain scenery, and slower, deeper lower sections with larger fish and consistent hatches.',
       image: IMG_9743,
       details: {
         species: 'Rainbow trout, Cutthroat trout, Mountain whitefish',
-        season: 'Year-round',
+        season: 'Year-round (best varies by section and season)',
         regulations: 'Catch and release, selective gear rules',
         specialSeason: 'Mountain whitefish retention allowed January-February',
-        tactics: 'Fly fishing, drift fishing, and other specialized techniques'
-      }
-    },
-    {
-      id: 2,
-      name: 'Upper Yakima',
-      description: 'The upper section of the Yakima River features faster water, pocket water, and beautiful mountain scenery.',
-      image: IMG_9921,
-      details: {
-        species: 'Rainbow trout, Cutthroat trout',
-        season: 'Year-round (best from late spring through fall)',
-        regulations: 'Catch and release, selective gear rules',
-        tactics: 'Dry fly fishing, nymphing, streamer fishing'
-      }
-    },
-    {
-      id: 3,
-      name: 'Lower Yakima',
-      description: 'The lower section offers slower, deeper water with larger fish and more consistent hatches.',
-      image: IMG_9921,
-      details: {
-        species: 'Rainbow trout, Cutthroat trout, Mountain whitefish',
-        season: 'Year-round (best in spring and fall)',
-        regulations: 'Catch and release, selective gear rules',
-        tactics: 'Nymphing, dry fly fishing, indicator fishing'
+        tactics: 'Dry fly fishing, nymphing, streamer fishing, indicator fishing, and other specialized techniques',
+        sections: [
+          { name: 'Upper Yakima', description: 'Faster water, pocket water, and beautiful mountain scenery. Best from late spring through fall.' },
+          { name: 'Lower Yakima', description: 'Slower, deeper water with larger fish and more consistent hatches. Best in spring and fall.' }
+        ]
       }
     }
   ]
@@ -60,7 +42,7 @@ function Spots() {
       id: 1,
       name: 'Lavender Lake',
       description: 'A beautiful alpine lake surrounded by wildflowers in summer, offering excellent trout fishing.',
-      image: IMG_9279,
+      image: lavenderLake,
       details: {
         species: 'Rainbow trout, Brook trout',
         season: 'Late spring through fall',
@@ -72,7 +54,7 @@ function Spots() {
       id: 2,
       name: 'Lake Cle-Elum',
       description: 'A large reservoir with diverse fishing opportunities for trout and kokanee salmon.',
-      image: lakeWenatcheeMorning,
+      image: IMG_7322,
       details: {
         species: 'Rainbow trout, Kokanee salmon, Cutthroat trout',
         season: 'Year-round (best from spring through fall)',
@@ -84,7 +66,7 @@ function Spots() {
       id: 3,
       name: 'Cooper Lake',
       description: 'A scenic mountain lake offering solitude and quality trout fishing.',
-      image: IMG_3924,
+      image: cooperLake,
       details: {
         species: 'Rainbow trout, Cutthroat trout',
         season: 'Late spring through fall',
@@ -96,7 +78,7 @@ function Spots() {
       id: 4,
       name: 'Lake Wenatchee',
       description: 'A large alpine lake known for its beautiful setting and excellent fishing for trout and kokanee.',
-      image: IMG_7322,
+      image: lakeWenatcheeMorning,
       details: {
         species: 'Rainbow trout, Kokanee salmon, Bull trout (catch and release)',
         season: 'Year-round (best from late spring through fall)',
@@ -174,65 +156,79 @@ function Spots() {
       <section className="hero-section">
         <div className="hero-background spots-hero"></div>
         <div className="hero-content">
-          <h1 className="hero-title">Fishing Spots</h1>
-          <p className="hero-text">Discover the best fishing locations in the Pacific Northwest</p>
+          <h1 className="hero-title">Fishing Trips</h1>
+          <p className="hero-text">Experience some of the best fishing in the Pacific Northwest</p>
         </div>
       </section>
 
       <div className="spots-page content-over-bg">
         <div className="container spots-content">
           <section className="spots-section">
-            <h2 className="section-title">River Fishing</h2>
+            <h2 className="section-title">Fishing Trips</h2>
             <p className="section-description">
-              The Yakima River is Washington's only Blue Ribbon trout stream, offering world-class fishing for wild rainbow and cutthroat trout. With over 75 miles of fishable water, the Yakima provides diverse angling opportunities year-round.
+              From pristine rivers to alpine lakes, our guided fishing trips offer diverse angling experiences for all skill levels. Explore Washington's premier fishing destinations with our experienced guides.
             </p>
             
             <div className="spots-grid">
-              {riverSpots.map(spot => (
-                <div key={spot.id} className="spot-card">
-                  <div className="spot-image">
-                    <OptimizedImage src={spot.image} alt={spot.name} />
-                  </div>
-                  <div className="spot-content">
-                    <h3>{spot.name}</h3>
-                    <p>{spot.description}</p>
-                    <div className="spot-details">
-                      <div className="detail-item">
-                        <span className="detail-label">Target Species:</span>
-                        <span className="detail-value">{spot.details.species}</span>
-                      </div>
-                      <div className="detail-item">
-                        <span className="detail-label">Season:</span>
-                        <span className="detail-value">{spot.details.season}</span>
-                      </div>
-                      <div className="detail-item">
-                        <span className="detail-label">Regulations:</span>
-                        <span className="detail-value">{spot.details.regulations}</span>
-                      </div>
-                      {spot.details.specialSeason && (
-                        <div className="detail-item">
-                          <span className="detail-label">Special Season:</span>
-                          <span className="detail-value">{spot.details.specialSeason}</span>
-                        </div>
-                      )}
-                      <div className="detail-item">
-                        <span className="detail-label">Tactics:</span>
-                        <span className="detail-value">{spot.details.tactics}</span>
-                      </div>
+              {/* Yakima River Card */}
+              <div className="spot-card">
+                <div className="spot-image">
+                  <OptimizedImage src={IMG_9743} alt="Yakima River" />
+                </div>
+                <div className="spot-content">
+                  <h3>Yakima River</h3>
+                  <p>Washington's only Blue Ribbon trout stream offering year-round fishing for rainbow and cutthroat trout.</p>
+                  <div className="spot-details">
+                    <div className="detail-item">
+                      <span className="detail-label">Target Species:</span>
+                      <span className="detail-value">Rainbow trout, Cutthroat trout, Mountain whitefish</span>
+                    </div>
+                    <div className="detail-item">
+                      <span className="detail-label">Season:</span>
+                      <span className="detail-value">Year-round</span>
+                    </div>
+                    <div className="detail-item">
+                      <span className="detail-label">Regulations:</span>
+                      <span className="detail-value">Catch and release, selective gear rules</span>
+                    </div>
+                    <div className="detail-item">
+                      <span className="detail-label">Tactics:</span>
+                      <span className="detail-value">Fly fishing, drift fishing</span>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </section>
-          
-          <section className="spots-section">
-            <h2 className="section-title">Lake Fishing</h2>
-            <p className="section-description">
-              From alpine lakes to roadside gravel ponds and reservoirs, our region offers a wide variety of lake fishing opportunities. Many lakes allow fish retention, making them perfect for anglers looking to bring home dinner.
-            </p>
-            
-            <div className="spots-grid">
+              </div>
+
+              {/* High Country Fishing Card */}
+              <div className="spot-card">
+                <div className="spot-image">
+                  <OptimizedImage src={riverCrossing} alt="High Country Fishing" />
+                </div>
+                <div className="spot-content">
+                  <h3>High Country Fishing</h3>
+                  <p>Experience pristine alpine fishing in remote mountain streams and lakes, offering a true wilderness adventure.</p>
+                  <div className="spot-details">
+                    <div className="detail-item">
+                      <span className="detail-label">Target Species:</span>
+                      <span className="detail-value">Rainbow trout, Brook trout, Cutthroat trout</span>
+                    </div>
+                    <div className="detail-item">
+                      <span className="detail-label">Season:</span>
+                      <span className="detail-value">Summer and early Fall</span>
+                    </div>
+                    <div className="detail-item">
+                      <span className="detail-label">Regulations:</span>
+                      <span className="detail-value">Various regulations depending on location</span>
+                    </div>
+                    <div className="detail-item">
+                      <span className="detail-label">Tactics:</span>
+                      <span className="detail-value">Dry fly fishing, nymphing, small streamers</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Lake Spots */}
               {lakeSpots.map(spot => (
                 <div key={spot.id} className="spot-card">
                   <div className="spot-image">
@@ -267,8 +263,8 @@ function Spots() {
           
           <section className="cta-section">
             <div className="cta-container">
-              <h2>Ready to Experience These Fishing Spots?</h2>
-              <p>Book a guided fishing trip with our experienced fishing guides and discover the best fishing spots in the Pacific Northwest.</p>
+              <h2>Ready to Experience These Fishing Trips?</h2>
+              <p>Book a guided fishing trip with our experienced fishing guides and discover some of the best fishing in the Pacific Northwest.</p>
               <Link to="/booking" className="btn btn-primary">Book a Guide</Link>
             </div>
           </section>

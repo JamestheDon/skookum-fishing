@@ -18,11 +18,13 @@ import IMG_8367 from '/assets/optimized/IMG_8367.webp';
 import IMG_9725 from '/assets/optimized/IMG_9725-preview.HEIC.webp';
 import IMG_0022 from '/assets/optimized/IMG_0022.webp';
 // E-commerce imports
+/*
 import ShopPage from './components/shop/ShopPage'
 import ProductDetail from './components/shop/ProductDetail'
 import CartPage from './components/cart/CartPage'
 import CheckoutPage from './components/checkout/CheckoutPage'
 import { CartProvider } from './context/CartContext'
+*/
 
 function Home() {
   return (
@@ -53,7 +55,9 @@ function Home() {
                 <li>Rainbow and cutthroat trout</li>
                 <li>Mountain whitefish</li>
               </ul>
-              <Link to="/booking" className="btn btn-primary">Book Now</Link>
+              <div className="button-container">
+                <Link to="/booking" className="btn btn-primary">Book Now</Link>
+              </div>
             </div>
           </div>
           
@@ -71,7 +75,9 @@ function Home() {
                 <li>Brook trout</li>
                 <li>Sockeye salmon</li>
               </ul>
-              <Link to="/booking" className="btn btn-primary">Book Now</Link>
+              <div className="button-container">
+                <Link to="/booking" className="btn btn-primary">Book Now</Link>
+              </div>
             </div>
           </div>
           
@@ -87,7 +93,9 @@ function Home() {
                 <li>Hosting</li>
                 <li>You name the adventure.</li>
               </ul>
-              <Link to="/booking" className="btn btn-primary">Book Now</Link>
+              <div className="button-container">
+                <Link to="/booking" className="btn btn-primary">Book Now</Link>
+              </div>
             </div>
           </div>
         </div>
@@ -177,23 +185,22 @@ function App() {
   }, []);
 
   return (
-    <CartProvider>
-      <Router>
-        <ScrollToTop />
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/booking" element={<Booking />} />
-            <Route path="/spots" element={<Spots />} />
-            {/* E-commerce routes */}
-            <Route path="/shop" element={<ShopPage />} />
-            <Route path="/shop/product/:productId" element={<ProductDetail />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-          </Routes>
-        </Layout>
-      </Router>
-    </CartProvider>
+    <Router>
+      <ScrollToTop />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/spots" element={<Spots />} />
+          {/* E-commerce routes - commented out 
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/shop/product/:productId" element={<ProductDetail />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          */}
+        </Routes>
+      </Layout>
+    </Router>
   )
 }
 

@@ -122,7 +122,7 @@ function Booking() {
         <div className="hero-background booking-hero"></div>
         <div className="hero-content">
           <h1 className="hero-title">Book a Guided Fishing Trip</h1>
-          <p className="hero-text">Experience the best fishing spots with our expert guides</p>
+          <p className="hero-text">Enjoy some of the finest fisheries in Washington state with local guides. </p>
         </div>
       </section>
 
@@ -307,6 +307,37 @@ function Booking() {
 
           <div className="booking-info">
             <h2>Guide Information</h2>
+            
+            <div className="info-card pricing-card">
+              <div className="info-card-header">
+                <span className="info-icon">💰</span>
+                <h3>Pricing</h3>
+              </div>
+              <p className="pricing-note">All prices include two anglers.</p>
+              <div className="pricing-options">
+                <div className="pricing-option">
+                  <h4>River Trips</h4>
+                  <ul>
+                    <li><strong>Full Day:</strong> $600</li>
+                    <li><strong>Half Day:</strong> $500</li>
+                  </ul>
+                </div>
+                <div className="pricing-option">
+                  <h4>Lake Trips</h4>
+                  <ul>
+                    <li><strong>Full Day:</strong> $550</li>
+                    <li><strong>Half Day:</strong> $450</li>
+                  </ul>
+                </div>
+                <div className="pricing-option">
+                  <h4>High Country / Walk and Wade</h4>
+                  <ul>
+                    <li><strong>Full Day:</strong> $550</li>
+                    <li><strong>Half Day:</strong> $450</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             
             <div className="info-card">
               <div className="info-card-header">

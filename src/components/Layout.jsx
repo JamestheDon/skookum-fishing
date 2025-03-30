@@ -22,10 +22,12 @@ function Layout({ children }) {
               <div className="footer-section">
                 <h3>Navigation</h3>
                 <Link to="/">Home</Link>
-                <Link to="/spots">Fishing Spots</Link>
-                <Link to="/booking">Book a Tour</Link>
+                <Link to="/spots">Fishing Trips</Link>
+                <Link to="/booking">Book a Trip</Link>
+                {/* E-commerce links commented out
                 <Link to="/shop">Shop</Link>
                 <Link to="/cart">Cart</Link>
+                */}
               </div>
               <div className="footer-section">
                 <h3>Contact</h3>

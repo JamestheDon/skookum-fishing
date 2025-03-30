@@ -240,8 +240,8 @@ body {
 }
 
 .booking-hero::before {
-  background-image: url('/assets/optimized/rampart-2.webp');
-  background-position: center 60%;
+  background-image: url('/assets/optimized/Trout-In-Net.webp');
+  background-position: center 40%;
   filter: brightness(0.6);
 }
 
@@ -533,6 +533,12 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+  justify-content: flex-start;
+}
+
+/* Make sure all card content areas have the same top alignment */
+.feature-card .card-content > * {
+  flex-shrink: 0;
 }
 
 .card-content h2 {
@@ -546,7 +552,6 @@ body {
   color: var(--text-color);
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  flex: 1;
 }
 
 .card-content ul {
@@ -568,6 +573,17 @@ body {
   left: 0;
   color: var(--primary-color);
   font-weight: bold;
+}
+
+/* Add this to push the button to the bottom */
+.card-content .btn {
+  margin-top: auto;
+}
+
+.button-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .card-button {
@@ -878,6 +894,82 @@ textarea.form-input {
 
 .info-gallery img:hover {
   transform: scale(1.05);
+}
+
+/* Pricing Card Styles */
+.pricing-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.pricing-note {
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.pricing-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .pricing-options {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "river lake"
+      "wade wade";
+    gap: 1rem;
+  }
+  
+  .pricing-option:nth-child(1) {
+    grid-area: river;
+  }
+  
+  .pricing-option:nth-child(2) {
+    grid-area: lake;
+  }
+  
+  .pricing-option:nth-child(3) {
+    grid-area: wade;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .pricing-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pricing-option {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.pricing-option h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.pricing-option ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pricing-option li {
+  padding-left: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.pricing-option li::before {
+  content: none;
 }
 
 /* Footer Styles */
@@ -1234,6 +1326,26 @@ html {
   transform: scale(1.05);
 }
 
+/* Custom positioning for Lavender Lake image */
+.spot-image img[alt="Lavender Lake"] {
+  position: relative;
+  transform: translateY(-15%);
+}
+
+.spot-card:hover .spot-image img[alt="Lavender Lake"] {
+  transform: translateY(-15%) scale(1.05);
+}
+
+/* Custom positioning for Cooper Lake image */
+.spot-image img[alt="Cooper Lake"] {
+  position: relative;
+  transform: translateY(-10%);
+}
+
+.spot-card:hover .spot-image img[alt="Cooper Lake"] {
+  transform: translateY(-10%) scale(1.05);
+}
+
 .spot-content {
   padding: 1.5rem;
   flex: 1;
@@ -1273,8 +1385,26 @@ html {
 
 .detail-label {
   font-weight: 600;
-  margin-right: 0.5rem;
   color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+.sections-detail {
+  margin-top: 0.75rem;
+}
+
+.sections-list {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.sections-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.sections-list li:last-child {
+  margin-bottom: 0;
 }
 
 .spots-hero::before {
@@ -2038,6 +2168,132 @@ img {
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+}
+
+.full-width-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: visible;
+  max-height: none;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .full-width-card {
+    grid-template-columns: 350px 1fr;
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .full-width-card .spot-image {
+    height: auto;
+    max-height: none;
+  }
+  
+  .full-width-card .spot-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .full-width-card .spot-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .full-width-card .spot-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  .full-width-card .spot-details {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .full-width-card .detail-item {
+    margin-bottom: 1.25rem;
+    padding-right: 1rem;
+  }
+  
+  .full-width-card .detail-label {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .full-width-card .detail-value {
+    font-size: 1rem;
+    line-height: 1.6;
+    display: block;
+  }
+  
+  .full-width-card .sections-detail {
+    grid-column: 1 / -1;
+    margin-top: 1.5rem;
+  }
+  
+  .full-width-card .sections-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  .full-width-card .sections-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .full-width-card {
+    grid-template-columns: 450px 1fr;
+  }
+  
+  .full-width-card .spot-details {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.river-sections {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.river-sections h4 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.sections-list {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.sections-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.sections-list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .full-width-card .spot-content {
+    padding: 2rem;
   }
 }
 

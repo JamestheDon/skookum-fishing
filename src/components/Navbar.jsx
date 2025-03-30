@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useCart } from '../context/CartContext'
+// import { useCart } from '../context/CartContext'
 // Import using a different approach
 // import logoImage from '../assets/optimized/bluefish-with-stars.webp'
 
@@ -8,7 +8,9 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
-  const { totalItems } = useCart()
+  // const { totalItems } = useCart()
+  // Using 0 as a placeholder for totalItems
+  const totalItems = 0
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,15 +61,16 @@ function Navbar() {
             className={`nav-link ${location.pathname === '/spots' ? 'active' : ''}`}
             onClick={closeMobileMenu}
           >
-            Fishing Spots
+            Fishing Trips
           </Link>
           <Link 
             to="/booking" 
             className={`nav-link ${location.pathname === '/booking' ? 'active' : ''}`}
             onClick={closeMobileMenu}
           >
-            Book a Tour
+            Book a Trip
           </Link>
+          {/* Shop link commented out
           <Link 
             to="/shop" 
             className={`nav-link ${location.pathname.startsWith('/shop') ? 'active' : ''}`}
@@ -75,8 +78,9 @@ function Navbar() {
           >
             Shop
           </Link>
+          */}
           
-          {/* Cart icon for mobile view */}
+          {/* Cart icon for mobile view - commented out
           <div className="mobile-cart-link">
             <Link 
               to="/cart" 
@@ -90,9 +94,10 @@ function Navbar() {
               )}
             </Link>
           </div>
+          */}
         </div>
         
-        {/* Cart icon for desktop view */}
+        {/* Cart icon for desktop view - commented out
         <div className="navbar-actions desktop-only">
           <Link to="/cart" className="cart-icon-container" onClick={closeMobileMenu}>
             <span className="cart-icon">🛒</span>
@@ -101,6 +106,7 @@ function Navbar() {
             )}
           </Link>
         </div>
+        */}
         
         <div className="mobile-menu-button" onClick={toggleMobileMenu}>
           <span></span>
